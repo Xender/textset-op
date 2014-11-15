@@ -7,11 +7,7 @@ def build_line_sets(filenames):
 
 	for filename in filenames:
 		with open(filename) as f:
-			current_lineset = set()
-			line_sets.append( current_lineset )
-
-			for line in f:
-				current_lineset.add(line)
+			line_sets.append( set(iter(f)) )
 
 	return line_sets
 
